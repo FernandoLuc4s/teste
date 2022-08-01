@@ -1,0 +1,48 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sabings account",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://b640-2804-420c-102d-7e00-e472-c171-474c-c7fe.sa.ngrok.io"
+    }
+  ],
+  "paths": {
+    "/twofactor": {
+      "get": {
+        "tags": [
+          "Get Delivery Methods"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getDeliveryMethods"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getDeliveryMethods": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
